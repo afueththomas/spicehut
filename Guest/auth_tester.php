@@ -1,0 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION['tes_id']))
+{
+    header('location:../Guest/index.php');
+    exit();
+}
+else
+{
+    $login_id=$_SESSION['tes_id'];
+}
+?>

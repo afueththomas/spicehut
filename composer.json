@@ -1,0 +1,10 @@
+{
+    "name": "vineeth/lms",
+    "description": "Labour Management System",
+    "require": {
+        "monolog/monolog": "^2.0",
+        "phpmailer/phpmailer": "^6.7",
+        "phpoffice/phpspreadsheet": "1.17.0",
+        "swiftmailer/swiftmailer": "^6.3"
+    }
+}
