@@ -33,7 +33,7 @@ if(isset($_POST['send_otp']))
                 $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                 $mail->Username   = 'afueththomas2023b@mca.ajce.in';                     //SMTP username
-                $mail->Password   = 'LIAJwith1215225';                               //SMTP password
+                $mail->Password   = '########';                               //SMTP password
                 $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
                 $mail->Port       = 465;   
                 $mail->setFrom('afueththomas2023b@mca.ajce.in');
