@@ -131,7 +131,14 @@ nav {
   padding: 0;
 }
 #logo h1 a {
-  color: rgb(255, 255, 255);
+  float: left;
+  display: block;
+  font-weight: 400;
+  font-size: 35px;
+  letter-spacing: 1px;
+  line-height: 44px;
+  color: #fffafa;
+  padding-top: 4px;
 }
 /* Since we'll have the "ul li" "float:left"
 * we need to add a clear after the container. */
@@ -527,7 +534,7 @@ background-color: #212121;
   box-shadow: 1px 1px 4px #000000;
 }
 .main-top {
-  background: url(../images/banner.jpg) no-repeat 0px 0px;
+  background: url(../img/bann.jpg) no-repeat 0px 0px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

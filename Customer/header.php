@@ -12,6 +12,7 @@ $profile=mysqli_fetch_array($details);
 <html>
 <html lang="zxx">
 <head>
+<link rel="icon" href="../favicon/logo.ico" type="image/x-icon">
   <title>SpiceHut | Admin</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">

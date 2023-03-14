@@ -1,26 +1,31 @@
 <?php
 
-include ('connection.php');
+//submit_rating.php
+
+$connect = new PDO("mysql:host=localhost;dbname=db_spicehut", "root", "");
+
 if(isset($_POST["rating_data"]))
 {
 
-	$fname=$_POST['bid'];
-	$lname=$_POST['user_name'];
-	$address=$_POST['user_rating'];
-	$phonenumber=$_POST['user_review'];
+	$data = array(
+		':user_name'		=>	$_POST["user_name"],
+		':user_rating'		=>	$_POST["rating_data"],
+		':user_review'		=>	$_POST["user_review"],
+		':datetime'			=>	time()
+	);
 
-	$select = "INSERT INTO tbl_feedback ('user_name', 'user_rating', 'user_review') VALUES ('$user_name',' $user_rating', '$user_review' )";
+	$query = "
+	INSERT INTO review_table 
+	(user_name, user_rating, user_review, datetime) 
+	VALUES (:user_name, :user_rating, :user_review, :datetime)
+	";
 
-	$result= mysqli_query($conn,$select);
-	if(mysqli_num_rows($result)> 0 )
-	{
-		echo '<script type="text/javascript">';
-   			echo ' alert("user alery exist")';
-			echo '</script>';
-		// 	echo '<button type="button" onclick="history.back();>Back</button>';
-		// // $error[]='user already exist';
+	$statement = $connect->prepare($query);
 
-}
+	$statement->execute($data);
+
+	echo "Your Review & Rating Successfully Submitted";
+
 }
 
 if(isset($_POST["action"]))
@@ -35,7 +40,10 @@ if(isset($_POST["action"]))
 	$total_user_rating = 0;
 	$review_content = array();
 
-	$query = "SELECT * FROM review_table ORDER BY review_id DESC ";
+	$query = "
+	SELECT * FROM review_table 
+	ORDER BY review_id DESC
+	";
 
 	$result = $connect->query($query, PDO::FETCH_ASSOC);
 

@@ -23,6 +23,6 @@
 <h1>Payment Complete</h1>
 
 <a href="../Customer/index.php" class="button">Continue Shopping</a>
-<a href="../Customer/ratingindexpage.php">
+<a href="../Customer/review/index.php">
   <button>ADD REVIEW</button>
 </a>

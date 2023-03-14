@@ -53,6 +53,7 @@ else
   <th>Total</th>
    <th>Status</th>
 <th style="color:#F00">Delete</th>
+<th style="color:#090">Review</th>
 
 
 <?php
@@ -75,6 +76,7 @@ else
 	 <td style="color:green;"> Ordered</td> <?php
 	
 echo "<td><a style='color:#090' href='deleteordered.php?booking_id=".$display['booking_id']."'>Delete</a> </td>";
+echo "<td><a style='color:#090' href='review/index.php?booking_id=".$display['booking_id']."'>Add Review</a> </td>";
 echo "</tr>";
 	
   }

@@ -1,14 +1,4 @@
-<?php
-include("../Guest/auth_user.php");
 
-include('../Customer/config.php');
-$login_id=$_SESSION['cus_id'];
-$details=mysqli_query($con,"SELECT *FROM tbl_customer WHERE customer_id='$login_id'");
-if($details)
-{
-$profile=mysqli_fetch_array($details);
-}
-?>
 <html>
 <html lang="zxx">
 <head>
@@ -48,12 +38,6 @@ $profile=mysqli_fetch_array($details);
   height: 50px;
   border-radius: 50%;
 }
-
-.nav1-2-1 {
-  margin-right: 80px;
-}
-
-
     </style>
 </head>
 
@@ -67,19 +51,22 @@ $profile=mysqli_fetch_array($details);
         </h1>
       </div>
       <!-- nav -->
-      <div style="margin-left:1000px;">
-      <nav class="nav1-2-1" >
+      <div style="margin-left:800px;">
+      <nav class="mx-md-auto">
 
-        <ul>
-          <li >
-            <a href="../Customer/index.php">Go Back</a>
+        <ul class="menu mt-2">
+          <li class="active">
+            <a href="../index.php">Home</a>
             </li>
-          <li>
-          <a href="#"><img src="../Customer/img/avathar.png" alt="Avatar" class="avatar"></a>
-          <a href="#"><?php
-          echo "Hi..👋 " ;
-          echo $profile['fname']; ?></a>
-      </li>
+
+            <li class="active">
+            <a href="../bookinghistory.php">My Orders</a>
+            </li>
+          
+          <li class="active">
+            <a href="../../Guest/logout.php">Logout</a>
+          </li>
+         
       </ul>
       </div>
 </div>

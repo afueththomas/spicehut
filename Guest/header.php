@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="icon" href="../favicon/logo.ico" type="image/x-icon">
   <title>Spice-Hut|Quality Spices</title>
   <script>
     addEventListener("load", function () {
@@ -123,6 +125,16 @@
 }
 
 
+    .avatar {
+  vertical-align: middle;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+
+
+
 </style>
 
 
@@ -131,11 +143,12 @@
 <body>
   
     <!-- header -->
-    <div class="headder-top d-md-flex" style="margin-top:-15px;background-color:#000000;">
+    <div class="headder-top d-md-flex" style="margin-top:-10px;background-color:#000000;">
       <div id="logo">
         <h1>
-          <a href="index.php"><img src=""alt="" /></a> 
-          <a href="index.php">Spice-Hut</a>
+          <a href="index.php"><img src="images/logo.png" alt="Avatar" class="avatar"></a>
+    
+          <a href="index.php">SpiceHut</a>
         </h1>
       </div>
       <!-- nav -->
@@ -148,7 +161,7 @@
             <a href="index.php">Home</a>
           </li>
          <li>
-            <a href="index.php">About</a>
+            <a href="about.php">About</a>
           </li>
           <li>
             <a href="categoryview.php">Category?</a>
@@ -159,6 +172,8 @@
           <li>
             <a href="customerreg.php">SignUp</a>
           </li>
+
+        
           <li>
  
 
@@ -206,4 +221,8 @@ function searchFunc(){
     }
 
 </script>
+
+
+
+
 </html>
