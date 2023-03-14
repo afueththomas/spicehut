@@ -36,7 +36,7 @@ $reg_query=mysqli_query($con,"INSERT INTO `tbl_tester`(`fname`, `lname`, `email`
 
  // h-hotel account
  $mail->Username = 'afueththomas2023b@mca.ajce.in';
- $mail->Password = 'Dont_Steal';
+ $mail->Password = '########';
 
  // send by h-hotel email
  $mail->setFrom('afueththomas2023b@mca.ajce.in', 'Employee added');
