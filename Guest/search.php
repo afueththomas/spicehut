@@ -17,7 +17,7 @@
         
               echo '
                 <div class="display_row">
-                    <a href="index.php?pid='.$prod_id.'" target="_blank">
+                    <a href="Productviewmore.php?pid='.$prod_id.'" target="_blank">
                         <div class="db_img"><img src="../images/'.$prod_img.'" alt="'.$prod_name.'"></div>
                         <div class="db_pname">'.$prod_name.'</div>
                     </a>

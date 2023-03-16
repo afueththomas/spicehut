@@ -38,7 +38,7 @@ include("header.php");
 							{
 								?>
       <div class="col-md-4" style="box-shadow: 3px 3px 10px #000; border-radius: 10px; top: 34px;width: 260px;height:439px;background-color: white;color: white;margin-left:7%;;margin-top:8%;margin-bottom:15%;margin-right:6px%;">
-       <?php echo "<a style='color:#090' href='Productviewmore.php?p_id=".$row['product_id']."'>";?>
+       <?php echo "<a style='color:#090' href='Productviewmore.php?pid=".$row['product_id']."'>";?>
         <div style="text-align: center;margin-top:43px;"><b> </b></div>
         <div style="text-align: center"> <b> <img src="../images/<?php echo $row['image'] ?>" width="250px" height="200px"/>
           <p style="color:black">Product Name:</p>

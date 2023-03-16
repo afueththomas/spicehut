@@ -7,6 +7,7 @@ from string import punctuation
 import re
 from nltk.corpus import stopwords
 
+
 nltk.download('stopwords')
 
 set(stopwords.words('english'))

@@ -15,9 +15,15 @@ include("header.php");
     <div class="slider-img ">
       <div class="container">
         <div class="slider-info">
-    
+        
+        <div style="background: rgb(249 250 251 / 75%);">
+
+          <p>The Admin Panel For Online SpiceHut Here Admin Can Manage The Booking , Products and View the Report .</p>
         </div>
-       
+        </div>
+        <div class="outs_more-buttn mt-md-4 mt-3">
+          <a href="#">Manage</a>
+        </div>
       </div>
     </div>
   </div>

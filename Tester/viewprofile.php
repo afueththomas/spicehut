@@ -1,8 +1,8 @@
 <?php
-include('../Guest/auth_tester.php');
+include('header.php');
 include('config.php');
 $login_id=$_SESSION['tes_id'];
-$details=mysqli_query($con,"SELECT *FROM tbl_tester WHERE tester_id='$login_id'");
+$details=mysqli_query($con,"SELECT *FROM tbl_tester WHERE id='$login_id'");
 if($details)
 {
 $profile=mysqli_fetch_array($details);
@@ -37,7 +37,7 @@ input[type=submit]:hover {
 
 div {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: ;
   padding: 20px;
 }
 h1 {
@@ -59,16 +59,16 @@ h1 {
 
 
     <label for="fname">First Name</label>
-	<input type="text" value="<?php echo $profile['fname']; ?>" name="fname" id="fname" readonly>	
+	<input type="text" value="<?php echo $profile['fname']; ?>"  readonly>	
 
     <label for="lname">Last Name</label>
-	<input type="text" value="<?php echo $profile['lname']; ?>" name="lname" id="lname" readonly>
+	<input type="text" value="<?php echo $profile['lname']; ?>"  readonly>
 
 	<label for="lname">E-Mail</label>
-	<input type="text" value="<?php echo $profile['email']; ?>" name="email" id="email" readonly>
+	<input type="text" value="<?php echo $profile['email']; ?>"  readonly>
 
 	<label for="lname">E-Mail</label>
-	<input type="text" value="<?php echo $profile['phone']; ?>" name="phone" id="phone" maxlength="10" readonly>
+	<input type="text" value="<?php echo $profile['phone']; ?>"  readonly>
 
 
   
@@ -81,4 +81,7 @@ h1 {
 </div>
 
 </body>
+<?php
+include('footer.php');
+?>
 </html>

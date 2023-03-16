@@ -131,14 +131,7 @@ nav {
   padding: 0;
 }
 #logo h1 a {
-  float: left;
-  display: block;
-  font-weight: 400;
-  font-size: 35px;
-  letter-spacing: 1px;
-  line-height: 44px;
   color: #fffafa;
-  padding-top: 4px;
 }
 /* Since we'll have the "ul li" "float:left"
 * we need to add a clear after the container. */

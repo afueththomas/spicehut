@@ -8,7 +8,7 @@
 <?php
 include("header.php");
 include("config.php");
-$pid=$_GET["p_id"];
+$pid=$_GET["pid"];
 $result=mysqli_query($con,"SELECT * from tbl_product p inner join tbl_category c on p.si_no=c_id inner join tbl_type t on p.type_id=t.type_id inner join tbl_quantity q on p.quantity_id=q.quantity_id  where p.product_id='$pid'");
 $row=mysqli_fetch_array($result);
 ?>

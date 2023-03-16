@@ -7,14 +7,13 @@ $sql=mysqli_query($con,"SELECT * FROM tbl_tester where email='$username' and pas
 $display=mysqli_fetch_array($sql);
 if($display>0)
 {
-	$_SESSION["tes_id"]=$display["tester_id"];
+	$_SESSION["tes_id"]=$display["id"];
 	header("location:../Tester/index.php");
 
 }
 else
 {
-echo "<script>alert('Invalid Username/Password!!');window.location='testerlogin.php'</script>";
+echo "<script>alert('Invalid Username/Password!!');window.location='customerlogin.php'</script>";
 }
 ?>
-
 
