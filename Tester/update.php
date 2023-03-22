@@ -58,10 +58,13 @@ if(isset($_GET["product_id"]))
 <?php
 if(isset($_POST["btnsubmit"]))
 {
-	$stock=$_POST['txt_stock'];	
-	$sql=mysqli_query($con,"UPDATE tbl_product SET 	stock='$stock' WHERE product_id='$product_id'");
-	{
-		echo "<script>alert('Stock Details Updated Succesfully!!');location='index.php'</script>";
-	}
+    $stock_to_add = $_POST['txt_stock'];
+    $sql = "UPDATE tbl_product SET stock = stock + '$stock_to_add' WHERE product_id = '$product_id'";
+    $result = mysqli_query($con, $sql);
+    if($result)
+    {
+        echo "<script>alert('Stock Details Updated Successfully!!');location='index.php'</script>";
+    }
 }
+
 ?>

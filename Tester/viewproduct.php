@@ -72,6 +72,7 @@ document.getElementById("category_name").value="<?php echo $category ?>";
            <th>Product</th>
            <th>Image</th>
            <th>Rate </th>
+           <th>Stock </th>
            <th style="color:#090">Stock Update</th>
          </tr>
       </thead>
@@ -86,6 +87,7 @@ $sql=mysqli_query($con,"SELECT * FROM `tbl_product` p inner join tbl_category c 
 	echo "<td>".$display["product_name"]."</td>";
 	echo "<td><img src='../images/".$display["image"]."'height='150'width='200'/></td>";
 	echo "<td>".$display["product_rate"]."</td>";
+   echo "<td>".$display["stock"]."</td>";
 	echo "<td><a style='color:#090' href='update.php?product_id=".$display['product_id']."'>Update</a> </td>";
 								echo "</tr>";
 								

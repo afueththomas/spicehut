@@ -136,7 +136,9 @@
 
 </style>
 
-
+<?php
+include("config.php");
+?>
 </head>
 
 <body>
@@ -163,16 +165,39 @@
             <a href="about.php">About</a>
           </li>
           <li>
-            <a href="categoryview.php">Category?</a>
-          </li>
-          <li>
             <a href="customerlogin.php">Login</a>
           </li>
           <li>
             <a href="customerreg.php">SignUp</a>
           </li>
 
-        
+          <li class="dropdown">
+            <!-- First Tier Drop Down -->
+            <label for="drop-2" class="toggle toogle-2">Categories
+              <span class="fa fa-angle-down" aria-hidden="true"></span>
+            </label>
+            <a href="#">Categories
+              <span class="fa fa-angle-down" aria-hidden="true"></span> 
+            </a>
+            <input type="checkbox" id="drop-2">
+            <ul>
+           <li>
+           <?php
+      $result=mysqli_query($con,"SELECT * FROM tbl_category");
+     while($row=mysqli_fetch_array($result))
+							{
+								?>
+                <a href="productview.php?c_id=<?php echo $row['c_id']; ?>"class="drop-text"><?php echo $row['category']; ?></a>
+                <?php
+              }
+                ?>         
+</li>
+            
+            </ul>
+            </li>
+
+
+
           <li>
  
 

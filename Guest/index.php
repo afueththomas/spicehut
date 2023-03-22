@@ -2,8 +2,15 @@
 include("header.php");
 include("config.php");
 ?>
+<head>
+
 </head>
 <body>
+
+
+
+
+
 <div class="main-top" id="home">
       <div class="slider-img ">
       <div class="container">
