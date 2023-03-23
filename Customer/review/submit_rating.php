@@ -6,44 +6,40 @@ $connect = new PDO("mysql:host=localhost;dbname=db_spicehut", "root", "");
 
 if(isset($_POST["rating_data"]))
 {
-
 	$data = array(
-		':user_name'		=>	$_POST["user_name"],
-		':user_rating'		=>	$_POST["rating_data"],
-		':user_review'		=>	$_POST["user_review"],
-		':datetime'			=>	time()
+		':user_name'        =>  $_POST["user_name"],
+		':user_rating'      =>  $_POST["rating_data"],
+		':user_review'      =>  $_POST["user_review"],
+		':cid'			    =>  $_POST["cid"],
+		':datetime'         =>  time()
 	);
 
-	$query = "
-	INSERT INTO review_table 
-	(user_name, user_rating, user_review, datetime) 
-	VALUES (:user_name, :user_rating, :user_review, :datetime)
-	";
+    $query = "INSERT INTO review_table ( product_id, user_name, user_rating, user_review, datetime) VALUES (:cid,	:user_name, :user_rating, :user_review, :datetime)";
 
-	$statement = $connect->prepare($query);
+    $statement = $connect->prepare($query);
 
-	$statement->execute($data);
+    $statement->execute($data);
 
-	echo "Your Review & Rating Successfully Submitted";
-
+    echo "Your Review & Rating Successfully Submitted";
 }
 
 if(isset($_POST["action"]))
 {
-	$average_rating = 0;
-	$total_review = 0;
-	$five_star_review = 0;
-	$four_star_review = 0;
-	$three_star_review = 0;
-	$two_star_review = 0;
-	$one_star_review = 0;
-	$total_user_rating = 0;
-	$review_content = array();
+	$cid= $_POST['cid'];
+    $average_rating = 0;
+    $total_review = 0;
+    $five_star_review = 0;
+    $four_star_review = 0;
+    $three_star_review = 0;
+    $two_star_review = 0;
+    $one_star_review = 0;
+    $total_user_rating = 0;
+    $review_content = array();
 
-	$query = "
-	SELECT * FROM review_table 
-	ORDER BY review_id DESC
-	";
+
+
+	
+    $query = "SELECT * FROM review_table where product_id= ".$cid." ORDER BY review_id DESC";
 
 	$result = $connect->query($query, PDO::FETCH_ASSOC);
 

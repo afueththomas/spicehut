@@ -76,7 +76,7 @@ else
 	 <td style="color:green;"> Ordered</td> <?php
 	
 echo "<td><a style='color:#090' href='deleteordered.php?booking_id=".$display['booking_id']."'>Delete</a> </td>";
-echo "<td><a style='color:#090' href='review/index.php?booking_id=".$display['booking_id']."'>Add Review</a> </td>";
+echo "<td><a style='color:#090' href='review/index.php?product_id=".$display['product_id']."'>Add Review</a> </td>";
 echo "</tr>";
 	
   }

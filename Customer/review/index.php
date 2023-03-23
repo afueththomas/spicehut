@@ -23,8 +23,8 @@ include("header.php");
 include("../../Guest/auth_user.php");       
 include("../config.php");
 $s=1;
-$cid=$_SESSION["cus_id"];  
-$sql=mysqli_query($con,"select * from tbl_bookingmaster bm inner join tbl_bookingdetail bd on bm.booking_id = bd.booking_id inner join tbl_product p on p.product_id = bd.product_id inner join tbl_category ca on ca.c_id = p.si_no inner join tbl_type t on t.type_id=p.type_id where customer_id = '$cid' and status!='Accepted' ");
+$cid=$_GET["product_id"];  
+$sql=mysqli_query($con,"select * from tbl_bookingmaster bm inner join tbl_bookingdetail bd on bm.booking_id = bd.booking_id inner join tbl_product p on p.product_id = bd.product_id inner join tbl_category ca on ca.c_id = p.si_no inner join tbl_type t on t.type_id=p.type_id where bd.product_id = '$cid' and status!='Accepted' group by bd.product_id");
 if(mysqli_num_rows($sql)<1) 
 {
   ?>
@@ -70,9 +70,6 @@ echo "</table>";
 }
 
 ?>
-
-
-
 
 
 
@@ -257,6 +254,7 @@ $(document).ready(function(){
     $('#save_review').click(function(){
 
         var user_name = $('#user_name').val();
+        var cid = <?php echo $cid ?>;
 
         var user_review = $('#user_review').val();
 
@@ -270,7 +268,7 @@ $(document).ready(function(){
             $.ajax({
                 url:"submit_rating.php",
                 method:"POST",
-                data:{rating_data:rating_data, user_name:user_name, user_review:user_review},
+                data:{rating_data:rating_data, user_name:user_name, user_review:user_review, cid:cid},
                 success:function(data)
                 {
                     $('#review_modal').modal('hide');
@@ -288,10 +286,11 @@ $(document).ready(function(){
 
     function load_rating_data()
     {
+        var cid = <?php echo $cid ?>;
         $.ajax({
             url:"submit_rating.php",
             method:"POST",
-            data:{action:'load_data'},
+            data:{action:'load_data', cid:cid},
             dataType:"JSON",
             success:function(data)
             {
