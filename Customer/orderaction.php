@@ -33,9 +33,13 @@ while($row3=mysqli_fetch_array($sql3))
 
 }
 $sql=mysqli_query($con,"INSERT INTO tbl_order(customer_id,fname,lname,booking_id,address,contact,pincode) VALUES('$customer_id','$fname','$lname','$maxbid','$address','$contact','686585')");
-
+$sql_stock=mysqli_query($con,"SELECT stock FROM tbl_product WHERE product_id='$product_id'");
+$stock=mysqli_fetch_array($sql_stock)['stock'];
+$current_stock=$stock-$quantity;
+$update_stock=mysqli_query($con,"UPDATE tbl_product SET stock='$current_stock' WHERE product_id='$product_id'");
 $sql=mysqli_query($con,"delete from tbl_cartmaster");
 $sql=mysqli_query($con,"delete from tbl_cartdetail");
+
 
 echo "<script>alert('Continue with Payment?');window.location='../razorpay/index.php';</script>";
 

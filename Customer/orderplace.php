@@ -21,6 +21,8 @@ include("config.php");
         <div class="col-md-3" style="text-align:right">
           <label>First Name</label>
         </div>
+
+        
         <div class="col-md-6">
           <input type="tel" class="form-control" name="txt_fname"  pattern="[A-Za-z]{1,32}" style="width:500px;" autocomplete="off" placeholder="First Name" required>
         </div>

@@ -3,9 +3,9 @@ session_start();
 include("config.php");
 $booking_date=date("yy/m/d");
 $customer_id=$_SESSION["cus_id"]; 
-$amount=$_POST["totamt"];
+$amount=$_POST["txtprice"];
 $pid=$_POST["hiddenpid"];
-$qty=$_POST["txtqty"];
+$qty=1;
 
 $sql=mysqli_query($con,"select * from tbl_cartmaster where customer_id='$customer_id' and status='pending'");
 $row=mysqli_fetch_array($sql);
