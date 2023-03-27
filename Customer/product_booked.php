@@ -41,7 +41,7 @@ td button:hover {
 
 </style>
 </head>
-
+<form action="orderplace.php" method="post" onload="f1()" style="background-image:url(images/a9.jpg)">
 <body>
   <script>
 document.getElementById("txttotal").value="0";
@@ -99,7 +99,7 @@ while($display=mysqli_fetch_array($sql))
   <button style='margin-right: 5px;' class='minus' onclick='this.parentNode.querySelector(\"input[type=number]\").stepUp();'>+</button>
   </td>";
   ?>
-<form action="orderplace.php" method="post" onload="f1()" style="background-image:url(images/a9.jpg)">
+
 <input type='hidden' name='product_rate' id='product_rate' value='<?php echo $display['product_rate']; ?>'>
 <?php
 	$total=$display["product_rate"]*$display["quantity"];
@@ -168,46 +168,6 @@ window.addEventListener("load", function() {
 
 });
   });
-
-//   const minusBtns = document.querySelectorAll('.minus-btn');
-// const plusBtns = document.querySelectorAll('.plus-btn');
-// const quantityInputs = document.querySelectorAll('.quantity-input');
-
-
-// minusBtns.forEach(btn => {
-//   btn.addEventListener('click', function() {
-//     const itemId = this.dataset.id;
-//     const inputEl = document.querySelector(`.quantity-input[data-id="${itemId}"]`);
-//     let currentValue = parseInt(inputEl.value);
-//     if(currentValue > 1) {
-//       inputEl.value = --currentValue;
-//       // update the total price
-//       updateTotalPrice();
-//     }
-//   });
-// });
-
-// plusBtns.forEach(btn => {
-//   btn.addEventListener('click', function() {
-//     const itemId = this.dataset.id;
-//     const inputEl = document.querySelector(`.quantity-input[data-id="${itemId}"]`);
-//     let currentValue = parseInt(inputEl.value);
-//     inputEl.value = ++currentValue;
-//     // update the total price
-//     updateTotalPrice();
-//   });
-// });
-
-// function updateTotalPrice() {
-//   let total = 0;
-//   quantityInputs.forEach(input => {
-//     const itemId = input.dataset.id;
-//     const price = parseFloat(document.querySelector(`#price-${itemId}`).value);
-//     total += (price * input.value);
-//   });
-//   document.querySelector('#txttotal').value = total.toFixed(2);
-// }
-
 </script>
 
 <?php

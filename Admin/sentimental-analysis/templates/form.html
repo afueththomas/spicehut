@@ -1,58 +1,71 @@
+<!DOCTYPE html>
 <html>
-    <head>
-	<style>
-table, th, td {
-  border: 1px solid black;
-}
-</style>
+  <head>
+    <title>Product List</title>
+    <style>
+      body {
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+      }
 
-        <title>{{ title }} Sentiment Analysis</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    </head>
-    <body>
-        <h1>Welcome To Sentiment Analyzer</h1>
-        <form method="POST">
-            <textarea name="text1" placeholder="Say Something: ...." rows="10" cols="109"></textarea><br><br>
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+      }
 
-            <input class="example_a" type="submit">
-        </form>
-        {% if final %}
-        <div>
-            <h2>The Sentiment of</h2> '{{ text1 }}' <h2>is {{ final *100}}% positive !</h2>
-			<h2>Score table</h2>
+      ol {
+        list-style-type: decimal;
+        padding-left: 20px;
+      }
 
+      li {
+        margin: 10px 0;
+      }
 
+      a {
+        display: block;
+        background-color: #fff;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        color: #333;
+        transition: box-shadow 0.3s ease-in-out;
+      }
 
-<table style="width:100%">
-  <tr>
-    <th>SENTIMENT METRIC</th>
-    <th>SCORE</th> 
-  </tr>
-  <tr>
-    <td>Positive</td>
-    <td>{{text2}}</td>
-    
-  </tr>
-  <tr>
-    <td>Neutral</td>
-    <td>{{text3}}</td>
-    
-  </tr>
-  <tr>
-    <td>Negative</td>
-    <td>{{text5}}</td>
-    
-  </tr>
-  <tr>
-    <td>Compound</td>
-    <td>{{text4}}</td>
-    
-  </tr>
-</table>
-            {% else %}
-            <p></p>
-            {% endif %}
-        </div>
-    </body>
+      a:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      p {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Select a product to view details</h1>
+
+      {% if products %}
+      <ol>
+        {% for product in products %}
+        <li>
+          <a href="/product_details/{{ product.product_id }}"
+            >{{ product.product_name }}</a
+          >
+        </li>
+        {% endfor %}
+      </ol>
+      {% else %}
+      <p>No products found.</p>
+      {% endif %}
+    </div>
+  </body>
 </html>
-

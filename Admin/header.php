@@ -119,7 +119,7 @@ $profile=mysqli_fetch_array($details);
                  <a href="report_pie.php" class="drop-text"> Product in Each Category</a>
                 <a href="most_selled.php" class="drop-text">Top Category of Product Selled</a>
                  <a href="http://127.0.0.1:5002/" class="drop-text">Sentimantal Analysis </a>
-
+          
 
               </li>
 
