@@ -21,7 +21,7 @@ include("config.php");
             <label>Email</label>
           </div>
           <div class="col-md-6">
-            <input type="email" class="form-control" name="txt_name" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:500px;" autocomplete="off">
+            <input type="email" class="form-control" id="email" name="txt_name" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:500px;" autocomplete="off">
           </div>
         </div>
         <br>
@@ -30,7 +30,7 @@ include("config.php");
             <label>Password</label>
           </div>
           <div class="col-md-6">
-            <input type="password" class="form-control" name="txt_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" style="width:500px;"  required  >
+            <input type="password" class="form-control" id="password" name="txt_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" style="width:500px;"  required  >
           </div>
         </div>
         <br>

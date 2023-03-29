@@ -94,10 +94,11 @@ while($display=mysqli_fetch_array($sql))
 	echo "<td>".$display["type"]."</td>";
 	echo "<td>".$display["product_rate"]."</td>";
   echo "<td>
-  <button style='margin-right: 5px;' class='plus' onclick='this.parentNode.querySelector(\"input[type=number]\").stepDown();'>-</button>
+  <button style='margin-right: 5px;' class='plus' onclick='updateQuantity(this);'>-</button>
   <input style='margin-right: 5px;' type='number' min='1' id='quantity' name='quantity' value='".$display["quantity"]."' readonly>
-  <button style='margin-right: 5px;' class='minus' onclick='this.parentNode.querySelector(\"input[type=number]\").stepUp();'>+</button>
-  </td>";
+  <button style='margin-right: 5px;' class='minus' onclick='updateQuantity(this);'>+</button>
+</td>
+";
   ?>
 
 <input type='hidden' name='product_rate' id='product_rate' value='<?php echo $display['product_rate']; ?>'>
@@ -137,37 +138,19 @@ $_SESSION["cart_id"]=$display1["cart_id"];
 }
 ?>
 <script>
-
-window.addEventListener("load", function() {
-    document.getElementById("quantity").addEventListener("change", function() {
-
-  function updateTotal() {
-    var product_rate = document.getElementById('product_rate').value;
-    var quantity = document.getElementById('quantity').value;
-    var total = product_rate * quantity;
-    document.getElementById('txttotal').value = "₹ " + total;
-  }
-
-  document.getElementByClassName('plus').addEventListener('click', function() {
-    var quantity = document.getElementById('quantity');
-    if (quantity.value > 1) {
-      quantity.stepDown();
-      updateTotal();
+    function updateQuantity(button) {
+        var input = button.parentNode.querySelector("input[type=number]");
+        var newValue = parseInt(input.value);
+        if (button.classList.contains("plus")) {
+            newValue++;
+        } else if (button.classList.contains("minus")) {
+            newValue--;
+            if (newValue < 1) {
+                newValue = 1;
+            }
+        }
+        input.value = newValue;
     }
-  });
-
-  document.getElementByClassName('minus').addEventListener('click', function() {
-    var quantity = document.getElementById('quantity');
-    quantity.stepUp();
-    updateTotal();
-  });
-
-  // Update total on page load
-  updateTotal();
-
-
-});
-  });
 </script>
 
 <?php
