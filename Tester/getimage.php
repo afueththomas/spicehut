@@ -23,7 +23,7 @@ include("config.php");
    <br>
    
 
-   <label style="text-align: center;">Choose Spice image upload:</label>
+   <label style="text-align: center;">:</label>
    <div class="col-md-2">
         <input type="file" name="fileToUpload" id="fileToUpload" class="">
       </div>
