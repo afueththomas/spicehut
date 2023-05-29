@@ -137,8 +137,7 @@ nav {
 #logo h1 a {
   color: #ffffff;
 }
-/* Since we'll have the "ul li" "float:left"
-* we need to add a clear after the container. */
+`
 
 nav:after {
   content: '';
